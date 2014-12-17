@@ -98,7 +98,7 @@ entityDef weapon_railgun
 
 	"ammoType"				"ammo_railgun"
 	"ammoRequired"				"1"
-	"clipSize"				"3"
+	"clipSize"				"10"
 	"lowAmmo"				"1"
 	"continuousFire"			"1"
 	"dryFireReload" 			"1"
@@ -433,7 +433,7 @@ entityDef hitscan_railgun_penetrate
 
 entityDef damage_railgun 
 {
-	"damage"					"125"
+	"damage"					"155"
 	"push"						"500"
 	"knockback"					"100"
 	"gib"						"1"
@@ -456,5 +456,5 @@ entityDef damage_railgun
 entityDef damage_railgun_mp 
 {
 	"inherit"					"damage_railgun"
-	"damage"					"90"
+	"damage"					"1000"
 }

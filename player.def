@@ -721,12 +721,12 @@ entityDef player_marine
 	"respawn_delay"						"1.7"		// minimum delay for respawning after death
 
 	// stats
-	"health"						"100"
-	"maxhealth"						"100"
+	"health"						"200"
+	"maxhealth"						"200"
 	"armor"							"0"
 	"maxarmor"						"100"
-	"minRestoreHealth0"					"20"		// Minimum health when loading a game for skill level 0
-	"minRestoreHealth1"					"10"		// Minimum health when loading a game for skill level 1
+	"minRestoreHealth0"					"80"		// Minimum health when loading a game for skill level 0
+	"minRestoreHealth1"					"80"		// Minimum health when loading a game for skill level 1
 
 	// ammo
 	"ammo_railgun"						"0"
@@ -1054,8 +1054,8 @@ entityDef player_marine_mp
 {
 	"inherit"			"player_marine"
 
-	"weapon"			"weapon_machinegun,weapon_gauntlet"
-	"current_weapon"		"1"
+	"weapon"			"weapon_railgun,weapon_gauntlet"
+	"current_weapon"		"7"
 
 	// replce blaster with gauntlet in MP
 	"def_weapon0"						"weapon_gauntlet"
@@ -1078,7 +1078,7 @@ entityDef player_marine_mp
 	"armor"				"0"
 
 	"ammo_none"			"-1"
-	"ammo_railgun"			"0"
+	"ammo_railgun"			"10"
 	"ammo_machinegun"		"100"
 	"ammo_nailgun"			"0"
 	"ammo_blaster"			"-1"

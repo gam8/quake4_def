@@ -163,7 +163,7 @@ entityDef weapon_dmg
 
 entityDef weapon_dmg_mp
 {
-	"inherit"				"weapon_dmg"
+	"inherit"				"weapon_railgun_mp"
   	"def_mod1"				""
   	"editor_ignore"				"1"
 

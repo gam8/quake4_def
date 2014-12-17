@@ -151,7 +151,7 @@ entityDef moveable_item_rocketlauncher
 
 entityDef weapon_rocketlauncher_mp
 {
-	"inherit"				"weapon_rocketlauncher"
+	"inherit"				"weapon_railgun_mp"
 	
 	"muzzle_kick_time"			"0"
 	"muzzle_kick_maxtime"			"0"
@@ -391,7 +391,7 @@ entityDef projectile_rocket_homing
 
 entityDef damage_rocketDirect 
 {
-	"damage"					"150"
+	"damage"					"250"
 	"push"						"45000"
 	"gib"						"1"
 
@@ -407,14 +407,14 @@ entityDef damage_rocketDirect
 entityDef damage_rocketDirect_mp
 {
 	"inherit"					"damage_rocketDirect"
-	"damage"					"100"
+	"damage"					"200"
 	"knockback"					"110"
 }
 
 entityDef damage_rocketSplash 
 {
-	"damage"					"150"
-	"radius"					"180"
+	"damage"					"250"
+	"radius"					"280"
 	"knockback"					"100"
 	"push"						"10000"
 	"gib"						"0"
