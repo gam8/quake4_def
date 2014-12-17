@@ -1,0 +1,90 @@
+model model_monster_slimy_lobber
+{
+	inherit				 model_monster_slimy_transfer 
+	
+		anim lob			models/monsters/slimy_transfer/attack01.md5anim		
+	{
+		frame	1,13,27,36,57				sound		snd_flesh 	// Use pre-existing sounds
+		frame 	19		ai_attack		melee		r_wrist 	// Throw at appropriate frame
+		frame 	19 		fx			fx_lob		r_wrist
+	}
+}
+
+entityDef damage_lobber_grenade
+{
+	"inherit"					"damage_monster_base"
+	"knockback"					"0"
+	"damage"					"60"
+	"push"						"10000"
+	
+	"tv_scale"					"0.7"
+	"tv_time"					"4200"
+}
+
+entityDef damage_lobber_grenade_splash
+{
+	"inherit"					"damage_monster_base"
+	"knockback"					"0"
+	"damage"					"80"
+	"radius"					"200"
+	"push"						"10000"
+
+	"tv_scale"					"0.7"
+	"tv_time"					"4200"
+}
+
+
+entityDef projectile_lobber_bit
+{
+	"inherit"		"projectile_gunner_grenade"	// inherit defaults from the Gunner grenade
+	
+	"fuse"			"3" //shorten the fuse
+	
+	"detonate_on_actor"			"1"		// Explode when hitting directly
+	
+	"model"			"models/gibs/head_pork.lwo"	
+	"fx_fly"		"effects/impact/impact_flesh.fx" // When flying, play the impact effect
+	"fx_detonate"		"effects/monsters/gib.fx"	// Use the splatty gib effect for 'explosions'
+	"fx_impact"		"effects/monsters/gib.fx"	// Use the splatty gib effect for 'explosions'
+	
+	"def_splash_damage"	"damage_lobber_grenade_splash"	// Use damage def specified above
+	"def_damage"		"damage_lobber_grenade"		// Use damage def specified above
+	
+	"speed"			"500"		// Adjust speed
+	"angular_velocity"	"0 -900 200"	// Give a nudge up and towards center			
+
+	"bounce"		"15"	
+
+	"contact_friction"	"1"	
+
+	"delay_splash"		"0"	
+
+	"snd_ricochet"		"failedtransfer_flesh"		// Fleshy sound on bounce
+}
+
+// New EntityDef
+entityDef monster_slimy_lobber
+{
+	"inherit"		"monster_slimy_transfer"	// Inherit from the Slimy Transfer
+	
+	"action_meleeAttack"			"1" 	// Leave this enabled, we'll replace it with our lobbing attack
+	"action_meleeAttack_anim"		"lob"	// 'New' anim on melee attack
+
+	"action_meleeAttack_minrange"		"80" 	// Minimum distance (in units) for attack.
+	"action_meleeAttack_maxrange"		"512"	// Maximum distance (in units) for attack.
+	"action_meleeAttack_blendFrames"	"6"	// Blend frames on attack
+	"action_meleeAttack_rate"		".5"	// Rate of attack
+	
+	"action_vomitAttack"			"1"	// Keep the vomit attack enabled
+	"action_vomitAttack_minrange"		"0"	// Minimum distance (in units) for attack.
+	"action_vomitAttack_maxrange"		"128"	// Maximum distance (in units) for attack.
+	
+	"model"				"model_monster_slimy_lobber"	// Use our new ModelDef from above
+	
+	"health"		"75"	 
+	"painThreshold"		"40"	
+
+	"def_attack_melee"	"projectile_lobber_bit"		// Change melee attack to our new projectile
+
+	"fx_lob"		"effects/impact/impact_flesh.fx"	// Effect to play when lobbing (added on frame commands above)
+}
