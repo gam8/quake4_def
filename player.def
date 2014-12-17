@@ -821,8 +821,8 @@ entityDef player_strogg
 	"model"								"model_player_strogg"
 
 	// stats
-	"health"							"125"
-	"maxhealth"							"125"
+	"health"							"500"
+	"maxhealth"							"500"
 	"armor"								"0"
 	"maxarmor"							"125"
 }
