@@ -18,7 +18,7 @@ entityDef ammo_triggersize_SP {
 	"triggerSize"		"32"
 }
 entityDef ammo_triggersize_MP {
-	"triggerSize"		"16"
+	"triggerSize"		"16" //mtl23 smaller clip size for the dmc mod
 }
 
 entityDef ammo_default
@@ -59,7 +59,7 @@ entityDef ammo_machinegun
 
 entityDef ammo_machinegun_mp
 {
-	"inherit"				"ammo_railgun_mp"
+	"inherit"				"ammo_railgun_mp" // changed to raligun instead of mtl23 mgun
 }
 
 entityDef ammo_nailgun

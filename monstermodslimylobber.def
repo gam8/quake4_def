@@ -88,3 +88,4 @@ entityDef monster_slimy_lobber
 
 	"fx_lob"		"effects/impact/impact_flesh.fx"	// Effect to play when lobbing (added on frame commands above)
 }
+// mtl23 well done full of comments already
